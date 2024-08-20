@@ -1,0 +1,31 @@
+Tareas:
+
+BACKEND:
+- Crea un nuevo proyecto de Laravel en la versión 10 o superior-OK
+- Ejecuta las migraciones que vienen por defecto con Laravel-OK
+- Crea una migración para la tabla visits con campos definidos-OK
+- CRUD en la API para la tabla visits:
+	-Crear-OK
+	-Leer-OK
+	-Actualizar-OK
+	-Eliminar-OK
+- Las rutas deben seguir una estructura RESTful-OK
+- Estar protegidas utilizando las mejores prácticas de autenticación y autorización en Laravel
+- La api debe estar documentada con sus ejemplos en alguna herramienta como postman o swagger.
+
+- Comando Artisan para crear nuevas visitas:
+- Crea un comando de Artisan que permita crear una nueva visita utilizando Laravel Prompts.
+- El comando debe solicitar al usuario que ingrese el nombre, correo electrónico, latitud y longitud de la visita.
+- Valida los datos ingresados y almacena la visita en la base de datos.
+
+FRONTEND:
+- Implementa una vista en tu proyecto Laravel que utilice Vue.js y Leaflet.
+- Utiliza la API creada en la parte anterior para obtener datos de visitas.
+- Muestra cada visita como un marcador en un mapa Leaflet, utilizando sus coordenadas latitude y longitude.
+- Al hacer clic en un marcador, debe mostrarse un popup con el nombre y el correo electrónico del cliente de la visita correspondiente.
+
+
+Cosas adicionales
+-Agregar SoftDeletes
+-Agregar Modelo Visits
+
