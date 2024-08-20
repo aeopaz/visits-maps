@@ -13,10 +13,10 @@ BACKEND:
 - Estar protegidas utilizando las mejores prácticas de autenticación y autorización en Laravel
 - La api debe estar documentada con sus ejemplos en alguna herramienta como postman o swagger.
 
-- Comando Artisan para crear nuevas visitas:
-- Crea un comando de Artisan que permita crear una nueva visita utilizando Laravel Prompts.
-- El comando debe solicitar al usuario que ingrese el nombre, correo electrónico, latitud y longitud de la visita.
-- Valida los datos ingresados y almacena la visita en la base de datos.
+- Comando Artisan para crear nuevas visitas:-OK
+- Crea un comando de Artisan que permita crear una nueva visita utilizando Laravel Prompts.-OK
+- El comando debe solicitar al usuario que ingrese el nombre, correo electrónico, latitud y longitud de la visita.-OK
+- Valida los datos ingresados y almacena la visita en la base de datos.-OK
 
 FRONTEND:
 - Implementa una vista en tu proyecto Laravel que utilice Vue.js y Leaflet.

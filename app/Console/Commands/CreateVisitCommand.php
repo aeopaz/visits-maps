@@ -6,6 +6,7 @@ use App\Models\VisitModel;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Validator;
 
+use function Laravel\Prompts\info;
 use function Laravel\Prompts\text;
 
 class CreateVisitCommand extends Command
@@ -74,6 +75,8 @@ class CreateVisitCommand extends Command
             "latitude" => $latitude,
             "longitude" => $longitude,
         ]);
-        
+
+        info("La visita ha sido creada correctamente");
+
     }
 }
