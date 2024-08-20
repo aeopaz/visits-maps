@@ -22,7 +22,7 @@ class VisitRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "name" => 'required|string|max:100',
+            "name" => 'required|string|min:3|max:100',
             "email" => 'required|email|max:100',
             "latitude" => 'required|numeric|max:180',
             "longitude" => 'required|numeric|max:180',
