@@ -19,10 +19,10 @@ BACKEND:
 - Valida los datos ingresados y almacena la visita en la base de datos.-OK
 
 FRONTEND:
-- Implementa una vista en tu proyecto Laravel que utilice Vue.js y Leaflet.
-- Utiliza la API creada en la parte anterior para obtener datos de visitas.
-- Muestra cada visita como un marcador en un mapa Leaflet, utilizando sus coordenadas latitude y longitude.
-- Al hacer clic en un marcador, debe mostrarse un popup con el nombre y el correo electrónico del cliente de la visita correspondiente.
+- Implementa una vista en tu proyecto Laravel que utilice Vue.js y Leaflet.-OK
+- Utiliza la API creada en la parte anterior para obtener datos de visitas.-OK
+- Muestra cada visita como un marcador en un mapa Leaflet, utilizando sus coordenadas latitude y longitude.-OK
+- Al hacer clic en un marcador, debe mostrarse un popup con el nombre y el correo electrónico del cliente de la visita correspondiente.-OK
 
 
 Cosas adicionales

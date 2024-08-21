@@ -15,7 +15,7 @@ class VisitController extends Controller
     public function index()
     {
         return response()->json([
-            "visits" => VisitModel::all(),
+            "visits" => VisitModel::orderBy('name')->get(),
         ], 200);
     }
 
