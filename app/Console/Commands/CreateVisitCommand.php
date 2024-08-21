@@ -5,7 +5,8 @@ namespace App\Console\Commands;
 use App\Models\VisitModel;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 use function Laravel\Prompts\info;
 use function Laravel\Prompts\text;
 
@@ -30,12 +31,27 @@ class CreateVisitCommand extends Command
      */
     public function handle()
     {
+
+
+        try {
+            DB::connection()->getPDO();
+            DB::connection()->getDatabaseName();
+        } catch (\Exception $e) {
+            info('No se pudo establecer la conexión a la base de datos visits_maps.');
+            return;
+        }
+
+
+        if (! Schema::hasTable('visits')) {
+            info('La tabla visits no existe');
+            return;
+        }
         $name = text(
             label: 'Ingrese nombre del cliente',
             placeholder: 'Alvaro Ocampo',
             validate: fn(string $value) => match (true) {
                 strlen($value) < 3 => 'El nombre debe tener al menos 3 caracteres.',
-                strlen($value) > 255 => 'El nombre no puede exceder los 100 caracteres.',
+                strlen($value) > 100 => 'El nombre no puede exceder los 100 caracteres.',
                 default => null
             }
         );
@@ -77,6 +93,5 @@ class CreateVisitCommand extends Command
         ]);
 
         info("La visita ha sido creada correctamente");
-
     }
 }

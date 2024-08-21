@@ -19,4 +19,6 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::resource("/visits", VisitController::class)->except('create', 'edit');
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::resource("/visits", VisitController::class)->except('create', 'edit');
+});
