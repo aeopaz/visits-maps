@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        'guard' => 'api',//Colocarlo como api
         'passwords' => 'users',
     ],
 
@@ -36,6 +36,12 @@ return [
     */
 
     'guards' => [
+        //Agregar esto
+        'api' => [
+            'driver' => 'session', //'sanctum',// 'session',//'token',
+            'provider' => 'users',
+            'hash' => false,
+        ],
         'web' => [
             'driver' => 'session',
             'provider' => 'users',

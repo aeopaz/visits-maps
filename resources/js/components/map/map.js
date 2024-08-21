@@ -15,9 +15,22 @@ export default {
 
         // Obtiene las visitas del backend
         const getVisits = async () => {
+            await login()
             const response = await window.axios.get('/visits')
             const { data } = response
             visits.value = data.visits;
+
+        }
+
+        const login = async () => {
+            const r = await window.axios.get('http://localhost/visits-maps/public/sanctum/csrf-cookie')
+            console.log(r);
+
+            const response = await window.axios.post('/login', {
+                email: 'test@test.com',
+                password: 'password'
+            });
+            console.log(response);
 
         }
 
@@ -41,14 +54,14 @@ export default {
                         'marker': marker,
                         'name': visit.name,
                         'email': visit.email,
-                        'id':visit.id
+                        'id': visit.id
                     })
 
                 })
             })
         }
 
-    
+
         onMounted(() => {
             loadMaps();
         })

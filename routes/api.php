@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\VisitController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-// Route::middleware(['auth:sanctum'])->group(function () {
+Route::post('/login', [AuthController::class, 'login']);
+Route::middleware(['auth:sanctum'])->group(function () {
     Route::resource("/visits", VisitController::class)->except('create', 'edit');
-// });
+    Route::post('/logout', [AuthController::class, 'logout']);
+});
