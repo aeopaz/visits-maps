@@ -1,9 +1,5 @@
 <template>
-    <!-- header -->
-    <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand ms-3" href="#">VisitsMaps</a>
-        <a @click="logout()" class="navbar-brand ms-3" href="#">Salir</a>
-    </nav>
+    <header-view></header-view>
     <!-- Mapa -->
     <div class="container">
         <div class="row justify-content-center">

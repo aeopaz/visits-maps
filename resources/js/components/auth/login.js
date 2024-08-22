@@ -6,7 +6,7 @@ export default {
 
 
         const formData = ref({
-            email: 'test@test.com',
+            email: 'alvaro@test.com',
             password: 'password'
         })
         const message = ref(null)

@@ -4,10 +4,13 @@ const useLogin = () => {
         try {
             const r = await window.axios.get('http://localhost/visits-maps/public/sanctum/csrf-cookie')
             const response = await window.axios.post('/login', formData);
+            localStorage.setItem('userName', response.data.user.name);
+            console.log(response);
             return true;
         } catch (error) {
-            return false;
             console.log('Error al iniciar sesión');
+            return false;
+
 
         }
 
@@ -15,6 +18,7 @@ const useLogin = () => {
 
     const logout = async () => {
         const response = await window.axios.post('/logout');
+        localStorage.removeItem('userName')
         window.location.assign("http://localhost/visits-maps/public/")
     }
 

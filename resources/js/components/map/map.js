@@ -1,19 +1,20 @@
 import { onMounted, ref } from 'vue'
 import L from 'leaflet';
 import VistsList from '../lists/VistsList.vue';
-import useLogin from '../auth/composables/useLogin';
+import HeaderView from '../layout/HeaderView.vue';
 
 
 
 export default {
     components: {
-        VistsList
+        VistsList,
+        HeaderView
     },
     setup() {
 
         const visits = ref([])
         const markers = ref([])
-        const { logout } = useLogin()
+
 
         // Obtiene las visitas del backend
         const getVisits = async () => {
@@ -59,7 +60,7 @@ export default {
         })
         return {
             markers,
-            logout
+
         }
 
     },

@@ -22,7 +22,8 @@ class AuthController extends Controller
 
         $request->session()->regenerate();
         return response()->json([
-            "message" => "Sesión iniciada"
+            "message" => "Sesión iniciada",
+            "user"=>auth()->user()
         ], 200);
     }
 
