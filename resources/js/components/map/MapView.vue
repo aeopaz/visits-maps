@@ -4,11 +4,13 @@
     <div class="container">
         <div class="row justify-content-center">
             <!-- Mapa -->
-            <div class="col-xl-8 col-md-12 col-xs-12">
+            <div class="col-xl-6 col-md-12 col-xs-12">
                 <h4 class="mt-3">Mapa</h4>
                 <div class="mt-3" id="map"></div>
             </div>
-            <vists-list :markers="markers"></vists-list>
+            <div class="col-xl-6 col-md-12 col-xs-12">
+                <vists-list :markers="markers"></vists-list>
+            </div>
         </div>
     </div>
 
@@ -20,5 +22,6 @@
 #map {
     height: 400px;
     width: 600px;
+    border-radius: 5%;
 }
 </style>
