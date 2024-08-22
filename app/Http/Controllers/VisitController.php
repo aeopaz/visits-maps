@@ -49,8 +49,10 @@ class VisitController extends Controller
      */
     public function update(VisitRequest $request, string $id)
     {
-       
+
         $visit = VisitModel::findOrFail($id);
+
+        $this->authorize('update', $visit);
 
         $visit->update($request->all());
 
@@ -66,6 +68,8 @@ class VisitController extends Controller
     public function destroy(string $id)
     {
         $visit = VisitModel::findOrFail($id);
+
+        $this->authorize('delete', $visit);
 
         $visit->delete();
 

@@ -14,5 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('auth.auth');
+});
+Route::get('/visits', function () {
     return view('visits.index');
 });

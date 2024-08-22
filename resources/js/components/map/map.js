@@ -1,6 +1,7 @@
 import { onMounted, ref } from 'vue'
 import L from 'leaflet';
 import VistsList from '../lists/VistsList.vue';
+import useLogin from '../auth/composables/useLogin';
 
 
 
@@ -12,26 +13,17 @@ export default {
 
         const visits = ref([])
         const markers = ref([])
+        const { logout } = useLogin()
 
         // Obtiene las visitas del backend
         const getVisits = async () => {
-            await login()
-            const response = await window.axios.get('/visits')
-            const { data } = response
-            visits.value = data.visits;
-
-        }
-
-        const login = async () => {
-            const r = await window.axios.get('http://localhost/visits-maps/public/sanctum/csrf-cookie')
-            console.log(r);
-
-            const response = await window.axios.post('/login', {
-                email: 'test@test.com',
-                password: 'password'
-            });
-            console.log(response);
-
+            try {
+                const response = await window.axios.get('/visits')
+                const { data } = response
+                visits.value = data.visits;
+            } catch (error) {
+                window.location.assign("http://localhost/visits-maps/public/")
+            }
         }
 
         //Cargar el mapa
@@ -67,6 +59,7 @@ export default {
         })
         return {
             markers,
+            logout
         }
 
     },
